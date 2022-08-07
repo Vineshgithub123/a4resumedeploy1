@@ -11,7 +11,7 @@ const avltemp=require ("./src/model/models/avltemplates")
 const fs = require("fs");
 const os = require("os");
 const nodemailer=require("nodemailer")
-require("dotenv").config('Backend\.env');
+require("dotenv").config();
 let currentUser='';
 let tempId=[];
 let id='';
@@ -405,8 +405,8 @@ app.post('/api/login_admin', (req, res) => {
   res.header("Access-Control-Allow-Method:GET,POST,PUT,DELETE");
   console.log("data is",req.body);
 
-  if(process.env.ADMIN_USERNAME===req.body.data.username && 
-    process.env.ADMIN_PASSWORD===req.body.data.password){
+  if(ADMIN_USERNAME===req.body.data.username && 
+   ADMIN_PASSWORD===req.body.data.password){
 
       let payload={subject:process.env.ADMIN_USERNAME+process.env.ADMIN_PASSWORD}
       let token=jwt.sign(payload,'secretKey')
