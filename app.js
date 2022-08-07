@@ -22,7 +22,8 @@ const dotenv = require("dotenv");
 
 // const { sign } = require("crypto");
 const app = new express();
-
+ADMIN_USERNAME="admin";
+ADMIN_PASSWORD="admin123@";
 const port = process.env.PORT||4000;
 const db='mongodb+srv://Resume_Builder:resume123@cluster0.uq5mq.mongodb.net/Resume_Builder?retryWrites=true&w=majority'
 
